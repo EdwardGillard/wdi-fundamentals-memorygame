@@ -22,6 +22,9 @@ const cards = [
 ];
 
 let cardsInPlay = [];
+let cardElement = [];
+const resetBoardButton = document.getElementById('resetButton');
+resetBoardButton.addEventListener('click', resetBoard);
 
 function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -33,14 +36,13 @@ function checkForMatch() {
 
 function createBoard() {
 	for (let i = 0; i < cards.length; i++) {
-	let cardElement = document.createElement('img');
+	cardElement = document.createElement('img');
 	cardElement.setAttribute('src', 'images/back.png');
 	cardElement.setAttribute('data-id', i);
 	cardElement.addEventListener('click', flipCard);
 	document.getElementById('game-board').appendChild(cardElement);
 	} 
-}
-
+};
 
 function flipCard() {
 	let cardId = this.getAttribute('data-id');
@@ -52,9 +54,16 @@ function flipCard() {
 	if (cardsInPlay.length === 2) {
 		checkForMatch();
 	}
-} 
+};
 
+function resetBoard(){
+	const allCards = document.getElementsByTagName('img');
+	for (var i = 0; i < allCards.length; i++) {
+		allCards[i].setAttribute('src', 'images/back.png');
+	}
+	cardsInPlay = []
 
+}
 createBoard();
 
 

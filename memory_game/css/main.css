@@ -76,7 +76,7 @@ footer {
 	font-family: "raleway":sans-serif;
 	float:right;
 }
-.button{
+#resetButton{
 	background: #000000;
 	color: #FFFFFF;
 	font-size:20px;
