@@ -93,3 +93,15 @@ footer {
 	height:0;
 	font-size: 0;
 }
+.scorePrint{
+	text-align: center;
+	font-size: 40px;
+	font-weight: 500;
+}
+.resetScoreButton {
+	background: #000000;
+	color: #FFFFFF;
+	font-size: 20px;
+	padding:10px;
+	margin: -10px, 0px;
+}

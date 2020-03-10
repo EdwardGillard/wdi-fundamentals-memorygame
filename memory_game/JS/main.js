@@ -25,13 +25,20 @@ let cardsInPlay = [];
 let cardElement = [];
 const resetBoardButton = document.getElementById('resetButton');
 resetBoardButton.addEventListener('click', resetBoard);
+const scoreDisplay = document.querySelector('.scorePrint');
+let score = 0;
+const resetScore = document.querySelector('.resetScoreButton');
+resetScore.addEventListener('click', resetScoreBoard);
 
 function checkForMatch() {
+	let x = 0;
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You found a match!");
+		score += 5
+		scoreDisplay.textContent = score;
 	} else {
 		alert("Sorry, try again.");
-}
+	}
 };
 
 function createBoard() {
@@ -62,8 +69,13 @@ function resetBoard(){
 		allCards[i].setAttribute('src', 'images/back.png');
 	}
 	cardsInPlay = []
-
 }
+
+function resetScoreBoard(){
+	score = 0
+	scoreDisplay.textContent = score;
+}
+
 createBoard();
 
 
